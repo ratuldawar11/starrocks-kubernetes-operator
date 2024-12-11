@@ -273,12 +273,12 @@ starrocksFESpec:
   # resources for fe pod.
   resources:
     requests:
-      cpu: 4
-      memory: 4Gi
+      cpu: 1
+      memory: 2Gi
     # If you want to remove one resource limit, e.g. cpu, you can it to cpu: "unlimited".
     limits:
-      cpu: 8
-      memory: 8Gi
+      cpu: 1
+      memory: 2Gi
   # fe storageSpec for persistent metadata.
   # Note: Once set, the following fields will not be allowed to be modified.
   storageSpec:
@@ -296,14 +296,14 @@ starrocksFESpec:
     storageClassName: ""
     # the persistent volume size for data.
     # fe container stop running if the disk free space which the fe meta directory residents, is less than 5Gi.
-    storageSize: 10Gi
+    storageSize: 1Gi
     # If storageMountPath is empty, the storageMountPath will be set to /opt/starrocks/fe/meta.
     storageMountPath: ""
     # If not set will use the value of the storageClassName field.
     logStorageClassName: ""
     # Setting this parameter can persist log storage, and the mount path is /opt/starrocks/fe/log.
     # If you set it to 0Gi, the related PVC will not be created, and the log will not be persisted.
-    logStorageSize: 5Gi
+    logStorageSize: 1Gi
     # If logMountPath is empty, the logMountPath will be set to /opt/starrocks/fe/log.
     # If logMountPath is not /opt/starrocks/fe/log, you must add in config the following configuration:
     #    dump_log_dir = xxx
@@ -576,12 +576,12 @@ starrocksCnSpec:
   # define resources requests and limits for cn pods.
   resources:
     requests:
-      cpu: 4
-      memory: 8Gi
+      cpu: 1
+      memory: 2Gi
     # If you want to remove one resource limit, e.g. cpu, you can it to cpu: "unlimited".
     limits:
-      cpu: 8
-      memory: 8Gi
+      cpu: 1
+      memory: 2Gi
   # specify storageclass name and request size.
   # Note: Once set, the following fields will not be allowed to be modified.
   storageSpec:
@@ -867,12 +867,12 @@ starrocksBeSpec:
   # resources for be pod.
   resources:
     requests:
-      cpu: 4
-      memory: 4Gi
+      cpu: 1
+      memory: 2Gi
     # If you want to remove one resource limit, e.g. cpu, you can it to cpu: "unlimited".
     limits:
-      cpu: 8
-      memory: 8Gi
+      cpu: 1
+      memory: 2Gi
   # be storageSpec for persistent storage.
   # Note: Once set, the following fields will not be allowed to be modified.
   storageSpec:
