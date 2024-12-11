@@ -385,12 +385,12 @@ starrocks:
     # resources for fe pod.
     resources:
       requests:
-        cpu: 4
-        memory: 4Gi
+        cpu: 1
+        memory: 2Gi
       # If you want to remove one resource limit, e.g. cpu, you can it to cpu: "unlimited".
       limits:
-        cpu: 8
-        memory: 8Gi
+        cpu: 1
+        memory: 2Gi
     # fe storageSpec for persistent metadata.
     # Note: Once set, the following fields will not be allowed to be modified.
     storageSpec:
@@ -688,12 +688,12 @@ starrocks:
     # define resources requests and limits for cn pods.
     resources:
       requests:
-        cpu: 4
-        memory: 8Gi
+        cpu: 1
+        memory: 2Gi
       # If you want to remove one resource limit, e.g. cpu, you can it to cpu: "unlimited".
       limits:
-        cpu: 8
-        memory: 8Gi
+        cpu: 1
+        memory: 2Gi
     # specify storageclass name and request size.
     # Note: Once set, the following fields will not be allowed to be modified.
     storageSpec:
@@ -979,12 +979,12 @@ starrocks:
     # resources for be pod.
     resources:
       requests:
-        cpu: 4
-        memory: 4Gi
+        cpu: 1
+        memory: 2Gi
       # If you want to remove one resource limit, e.g. cpu, you can it to cpu: "unlimited".
       limits:
-        cpu: 8
-        memory: 8Gi
+        cpu: 1
+        memory: 2Gi
     # be storageSpec for persistent storage.
     # Note: Once set, the following fields will not be allowed to be modified.
     storageSpec:
