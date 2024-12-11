@@ -273,12 +273,12 @@ starrocksFESpec:
   # resources for fe pod.
   resources:
     requests:
-      cpu: 1
-      memory: 2Gi
+      cpu: 0.5
+      memory: 1Gi
     # If you want to remove one resource limit, e.g. cpu, you can it to cpu: "unlimited".
     limits:
-      cpu: 1
-      memory: 2Gi
+      cpu: 0.5
+      memory: 1Gi
   # fe storageSpec for persistent metadata.
   # Note: Once set, the following fields will not be allowed to be modified.
   storageSpec:
@@ -576,12 +576,12 @@ starrocksCnSpec:
   # define resources requests and limits for cn pods.
   resources:
     requests:
-      cpu: 1
-      memory: 2Gi
+      cpu: 0.5
+      memory: 1Gi
     # If you want to remove one resource limit, e.g. cpu, you can it to cpu: "unlimited".
     limits:
-      cpu: 1
-      memory: 2Gi
+      cpu: 0.5
+      memory: 1Gi
   # specify storageclass name and request size.
   # Note: Once set, the following fields will not be allowed to be modified.
   storageSpec:
@@ -867,12 +867,12 @@ starrocksBeSpec:
   # resources for be pod.
   resources:
     requests:
-      cpu: 1
-      memory: 2Gi
+      cpu: 0.5
+      memory: 1Gi
     # If you want to remove one resource limit, e.g. cpu, you can it to cpu: "unlimited".
     limits:
-      cpu: 1
-      memory: 2Gi
+      cpu: 0.5
+      memory: 1Gi
   # be storageSpec for persistent storage.
   # Note: Once set, the following fields will not be allowed to be modified.
   storageSpec:
@@ -1063,11 +1063,11 @@ starrocksFeProxySpec:
     tag: ""
   resources:
     requests:
-      cpu: 1
-      memory: 2Gi
+      cpu: 0.5
+      memory: 1Gi
     limits:
-      cpu: 1
-      memory: 2Gi
+      cpu: 0.5
+      memory: 1Gi
   # set the resolver for nginx server, default kube-dns.kube-system.svc.cluster.local
   resolver: ""
   service:
