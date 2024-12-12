@@ -385,12 +385,12 @@ starrocks:
     # resources for fe pod.
     resources:
       requests:
-        cpu: 1
-        memory: 2Gi
+        cpu: 2
+        memory: 4Gi
       # If you want to remove one resource limit, e.g. cpu, you can it to cpu: "unlimited".
       limits:
-        cpu: 1
-        memory: 2Gi
+        cpu: 2
+        memory: 4Gi
     # fe storageSpec for persistent metadata.
     # Note: Once set, the following fields will not be allowed to be modified.
     storageSpec:
@@ -714,7 +714,7 @@ starrocks:
       # Note: Because hostPath field is not supported here, hostPath is not allowed to be set in storageClassName.
       storageClassName: ""
       # the storage size of per persistent volume for data.
-      storageSize: 1Ti
+      storageSize: 20Gi
       # the number of persistent volumes for data.
       # if storageCount == 1
       #   the storageMountPath field is used to specify the mount path of the persistent volume. If storageMountPath is empty,
@@ -862,7 +862,7 @@ starrocks:
   # spec for component be, provide storage and compute function.
   starrocksBeSpec:
     # number of replicas to deploy.
-    replicas: 1
+    replicas: 2
     image:
       # image sliced by "repository:tag"
       repository: starrocks/be-ubuntu
@@ -987,12 +987,12 @@ starrocks:
     # resources for be pod.
     resources:
       requests:
-        cpu: 1
-        memory: 2Gi
+        cpu: 4
+        memory: 8Gi
       # If you want to remove one resource limit, e.g. cpu, you can it to cpu: "unlimited".
       limits:
-        cpu: 1
-        memory: 2Gi
+        cpu: 4
+        memory: 8Gi
     # be storageSpec for persistent storage.
     # Note: Once set, the following fields will not be allowed to be modified.
     storageSpec:
@@ -1009,7 +1009,7 @@ starrocks:
       # Note: Because hostPath field is not supported here, hostPath is not allowed to be set in storageClassName.
       storageClassName: ""
       # the storage size of per persistent volume for data.
-      storageSize: 1Ti
+      storageSize: 20Gi
       # the number of persistent volumes for data.
       # if storageCount == 1
       #   the storageMountPath field is used to specify the mount path of the persistent volume. If storageMountPath is empty,
@@ -1026,7 +1026,7 @@ starrocks:
       logStorageClassName: ""
       # Setting this parameter can persist log storage, and the mount path is /opt/starrocks/be/log.
       # If you set it to 0Gi, the related PVC will not be created, and the log will not be persisted.
-      logStorageSize: 20Gi
+      logStorageSize: 10Gi
       # If logMountPath is empty, the logMountPath will be set to /opt/starrocks/be/log.
       # If logMountPath is not /opt/starrocks/be/log, you must add in config the following configuration: sys_log_dir = xxx.
       logMountPath: ""
